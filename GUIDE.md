@@ -61,9 +61,35 @@
 
 ## 三、文档目录 `docs/`
 
+### AI 审计报告 `docs/ai-review/`
+
+存放每次发版前的 **AI 代码审计报告**，用于记录 AI 对固件代码的风险评估和质量论证结论。
+
 | 目录 | 放什么文件 | 示例 |
 |------|-----------|------|
-| `docs/ai-review/` | AI 论证报告（发版前的代码审查报告） | `ai-review-compute-v1.0.md` |
+| `docs/ai-review/` | AI 审计报告（发版前的代码审查报告） | `ai-review-compute-v1.0.0.md` |
+
+### 文件命名规范
+```
+ai-review-<板名>-v<版本号>.md
+```
+- 计算板：`ai-review-compute-v1.0.0.md`
+- 显示通讯板：`ai-review-display-v1.0.0.md`
+
+### 什么时候需要生成 AI 审计报告？
+- **每次固件发版 Tag 之前**，必须先生成对应板的 AI 审计报告
+- 报告内容应包含：代码变更摘要、风险清单、质量评估结论
+- 报告通过后方可打 Tag 发布
+
+### 操作步骤
+1. 发版前，将 `git log` 粘贴到 AI 提示词（见 `PROMPTS.md` 中的「发版前 AI 论证」）
+2. 将 AI 输出的审计报告保存到 `docs/ai-review/` 目录，按命名规范命名
+3. 将报告提交到 Git：
+   ```bash
+   git add docs/ai-review/ai-review-compute-v1.0.0.md
+   git commit -m "docs: add AI review report for compute board v1.0.0"
+   ```
+4. 确认报告无高风险项后，再执行 Tag 发版
 
 ---
 
