@@ -1,37 +1,31 @@
-# eric820-embedded
+# Eric888 嵌入式项目
 
-#### 介绍
-820接地管理项目硬件和嵌入式仓库
+## 项目简介
+Eric888 设备嵌入式固件，包含计算板和显示通讯板两块核心板。
 
-#### 软件架构
-软件架构说明
+## 开发环境
+- 操作系统：Windows
+- IDE：Keil MDK v5.x
+- 芯片：STM32（填写具体型号）
+- RTOS：RT-Thread v（填写版本号，见 include/rtdef.h）
 
+## 工程位置
+- 计算板：firmware/bsp/board-compute/Keil/（填工程文件名）.uvprojx
+- 显示通讯板：firmware/bsp/board-display/Keil/（填工程文件名）.uvprojx
 
-#### 安装教程
+## 构建步骤
+1. 用 Keil MDK 打开对应 .uvprojx 工程文件
+2. Build → Rebuild All
+3. 烧录：（补充烧录方式和工具）
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+## 目录说明
+| 目录 | 说明 |
+|------|------|
+| firmware/bsp/board-compute/ | 计算板 BSP（应用+驱动+板级）|
+| firmware/bsp/board-display/ | 显示通讯板 BSP |
+| hardware/board-compute/ | 计算板硬件设计+生产资料 |
+| hardware/board-display/ | 显示通讯板硬件设计+生产资料 |
+| firmware/src/ | RT-Thread 内核 |
+| firmware/components/ | RT-Thread 组件 |
+| firmware/libcpu/ | CPU 适配层 |
+| firmware/include/ | RT-Thread 头文件 |
