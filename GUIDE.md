@@ -4,27 +4,27 @@
 
 ---
 
-## 一、固件目录 `firmware/`
+## 一、固件目录 `fireware/`
 
 存放 RT-Thread SDK 源码及两块板的 BSP 工程代码。
 
 | 目录 | 放什么文件 | 示例 |
 |------|-----------|------|
-| `firmware/bsp/board-compute/Keil/` | 计算板 Keil 工程文件 | `*.uvprojx`、`*.uvoptx` |
-| `firmware/bsp/board-compute/applications/` | 计算板应用层代码 | `main.c`、业务逻辑 `.c/.h` |
-| `firmware/bsp/board-compute/drivers/` | 计算板板级驱动 | `drv_can.c`、`board.c`、`board.h` |
-| `firmware/bsp/board-display/Keil/` | 显示通讯板 Keil 工程文件 | 同上 |
-| `firmware/bsp/board-display/applications/` | 显示通讯板应用层代码 | 同上 |
-| `firmware/bsp/board-display/drivers/` | 显示通讯板板级驱动 | 同上 |
-| `firmware/src/` | RT-Thread 内核源码 | 从 SDK 拷入，一般不修改 |
-| `firmware/components/` | RT-Thread 组件（FinSH、FAL 等）| 从 SDK 拷入，一般不修改 |
-| `firmware/libcpu/` | CPU 适配层（Cortex-M 启动文件等）| 从 SDK 拷入，一般不修改 |
-| `firmware/include/` | RT-Thread 头文件 | `rtthread.h`、`rtdef.h` 等 |
+| `fireware/bsp/board-compute/Keil/` | 计算板 Keil 工程文件 | `*.uvprojx`、`*.uvoptx` |
+| `fireware/bsp/board-compute/applications/` | 计算板应用层代码 | `main.c`、业务逻辑 `.c/.h` |
+| `fireware/bsp/board-compute/drivers/` | 计算板板级驱动 | `drv_can.c`、`board.c`、`board.h` |
+| `fireware/bsp/board-display/Keil/` | 显示通讯板 Keil 工程文件 | 同上 |
+| `fireware/bsp/board-display/applications/` | 显示通讯板应用层代码 | 同上 |
+| `fireware/bsp/board-display/drivers/` | 显示通讯板板级驱动 | 同上 |
+| `fireware/src/` | RT-Thread 内核源码 | 从 SDK 拷入，一般不修改 |
+| `fireware/components/` | RT-Thread 组件（FinSH、FAL 等）| 从 SDK 拷入，一般不修改 |
+| `fireware/libcpu/` | CPU 适配层（Cortex-M 启动文件等）| 从 SDK 拷入，一般不修改 |
+| `fireware/include/` | RT-Thread 头文件 | `rtthread.h`、`rtdef.h` 等 |
 
 ### 操作步骤
-1. 将整个 RT-Thread SDK 的 `src/`、`components/`、`libcpu/`、`include/` 拷贝到 `firmware/` 下
-2. 将计算板 BSP 工程整体拷入 `firmware/bsp/board-compute/`
-3. 将显示通讯板 BSP 工程整体拷入 `firmware/bsp/board-display/`
+1. 将整个 RT-Thread SDK 的 `src/`、`components/`、`libcpu/`、`include/` 拷贝到 `fireware/` 下
+2. 将计算板 BSP 工程整体拷入 `fireware/bsp/board-compute/`
+3. 将显示通讯板 BSP 工程整体拷入 `fireware/bsp/board-display/`
 4. 确认 Keil 工程文件放在对应 `Keil/` 子目录中
 
 > ⚠️ **注意**：Keil 编译产物（`Objects/`、`Listings/`、`*.axf`、`*.hex` 等）已被 `.gitignore` 排除，无需手动删除。
@@ -85,9 +85,9 @@
 完成文件存放后，请逐项确认：
 
 ```
-□ firmware/bsp/board-compute/ 下有 Keil 工程和源码
-□ firmware/bsp/board-display/ 下有 Keil 工程和源码
-□ firmware/src/ 下有 RT-Thread 内核源码
+□ fireware/bsp/board-compute/ 下有 Keil 工程和源码
+□ fireware/bsp/board-display/ 下有 Keil 工程和源码
+□ fireware/src/ 下有 RT-Thread 内核源码
 □ hardware/ 下有原理图、PCB、BOM
 □ hardware/*/production/v1.0/ 下有 Gerber 等生产资料
 □ 执行 git status 确认无 Objects/ Listings/ 等编译产物
