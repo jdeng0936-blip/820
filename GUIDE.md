@@ -93,3 +93,49 @@
 □ 执行 git status 确认无 Objects/ Listings/ 等编译产物
 □ 执行 git status 确认无 .bak .lck .tmp 等临时文件
 ```
+
+---
+
+## 六、Git 操作指南
+
+### 第一步：初始化 Git 并提交
+
+```bash
+# 1. 进入项目根目录
+cd /c/Projects/rt-thread
+
+# 2. 初始化 Git
+git init
+
+# 3. 检查 .gitignore 是否生效
+git status
+# 应该看到：
+# ✅ bsp/eric820/ 下的源码
+# ✅ src/ components/ include/ 等内核
+# ❌ 不应出现 bsp/ 下其他板子
+# ❌ 不应出现 Objects/ Listings/
+
+# 4. 全部加入暂存区
+git add .
+
+# 5. 再次确认
+git status
+# 确认无编译产物、无无关 BSP
+
+# 6. 第一次提交
+git commit -m "chore: initial archive [Eric820 RT-Thread SDK + BSP baseline]"
+```
+
+### 第二步：GitHub 创建仓库并推送
+
+```bash
+# 1. 在 GitHub 组织页面创建空仓库 eric820-embedded
+#    ⚠️ 不要勾选 "Initialize with README"
+
+# 2. 添加远程并推送
+git remote add origin https://github.com/组织名/eric820-embedded.git
+git branch -M main
+git push -u origin main
+
+# 如果文件较大，等待几分钟
+```
