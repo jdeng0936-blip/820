@@ -1,6 +1,6 @@
-# ===== 排除其他 BSP（只保留 eric888）=====
+# ===== 排除其他 BSP（只保留 eric820）=====
 bsp/*
-!bsp/eric888/
+!bsp/eric820/
 
 # ===== Keil 编译产物 =====
 **/Objects/
