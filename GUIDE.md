@@ -31,33 +31,9 @@
 
 ---
 
-## 二、硬件目录 `hardware/`
-
-存放两块板的硬件设计源文件和生产制造资料。
-
-| 目录 | 放什么文件 | 示例 |
-|------|-----------|------|
-| `hardware/board-compute/schematic/` | 计算板原理图（PADS Logic） | `*.sch`、`*.prj` |
-| `hardware/board-compute/pcb/` | 计算板 PCB 文件（PADS Layout） | `*.pcb` |
-| `hardware/board-compute/library/` | 元件库 / 封装库 | `*.pt5`、`*.ld5` |
-| `hardware/board-compute/bom/` | BOM 物料清单 | `bom-compute-v1.0.xlsx` |
-| `hardware/board-compute/production/v1.0/gerber/` | Gerber 投板文件 | `*.gbr`、`*.drl` |
-| `hardware/board-compute/production/v1.0/stencil/` | 钢网文件 | `top-stencil.gbr` 等 |
-| `hardware/board-compute/production/v1.0/pick-place/` | 贴片机坐标文件 | `pick-place.csv` |
-| `hardware/board-compute/production/v1.0/designator/` | 位号文件 | `designator-map.csv` |
-| `hardware/board-compute/production/v1.0/assembly/` | 装配图 / 丝印图 | `assembly-top.pdf` 等 |
-| `hardware/board-display/...` | 显示通讯板（与计算板**相同结构**） | 同上 |
-
-### 操作步骤
-1. 将原理图源文件放入对应 `schematic/` 目录
-2. 将 PCB 文件放入 `pcb/` 目录
-3. 将 BOM 表放入 `bom/` 目录（文件名带版本号，如 `bom-compute-v1.0.xlsx`）
-4. 生产资料按版本号建子目录（如 `production/v1.0/`），分别放入 gerber、钢网、坐标、位号、装配图
-5. 新版本硬件 → 新建 `production/v1.1/` 目录，保留旧版本不删
-
-> ⚠️ **注意**：PADS 的 `.bak`、`.lck`、`.tmp` 等临时文件已被 `.gitignore` 排除。
-
----
+## 二、硬件目录
+eric820-embedded\hardware\pcb
+eric820-embedded\hardware\schematic
 
 ## 三、文档目录 `docs/`
 
