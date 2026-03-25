@@ -17,6 +17,7 @@ Eric820 设备嵌入式固件，包含计算板和显示通讯板两块核心板
 * 显示通讯板：fireware/board-display/rt-thread/bsp/stm32/eric820dispnewcan/project.uvprojx
 * 计算板与显示板通用的recovery：fireware/recovery/rt-thread/bsp/stm32/eric820\_recovery/project.uvprojx
 * 计算板与显示板通用的sbl启动代码：fireware/sbl/eric820\_boot\_sbl/MDK-ARM/eric820\_boot\_sbl.uvprojx
+* Canbox板：fireware/board-canbox/rt-thread/bsp/hc32/eric820canbox/project.uvprojx
 
 ## 构建步骤
 
@@ -31,6 +32,7 @@ Eric820 设备嵌入式固件，包含计算板和显示通讯板两块核心板
 
 1. Segger j-flash新建或打开工程，MCU选择STM32F429BI，接口SWD
 2. 将sbl、recovery、application三个HEX文件合并
+3. canbox不包含sbl和recovery
 
 保存完整的生产烧录HEX文件用于烧录
 
