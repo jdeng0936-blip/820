@@ -1,0 +1,37 @@
+[
+ {
+  "name": "MBEDTLS",
+  "path": "/packages/security/mbedtls",
+  "ver": "v2.28.1"
+ },
+ {
+  "name": "CJSON",
+  "path": "/packages/language/JSON/cJSON",
+  "ver": "v1.7.17"
+ },
+ {
+  "name": "SEGGER_RTT",
+  "path": "/packages/tools/SEGGER_RTT",
+  "ver": "latest"
+ },
+ {
+  "name": "CMSIS_CORE",
+  "path": "/packages/system/CMSIS/CMSIS-Core",
+  "ver": "latest"
+ },
+ {
+  "name": "STM32F4_HAL_DRIVER",
+  "path": "/packages/peripherals/hal-sdk/stm32/stm32f4_hal_driver",
+  "ver": "latest"
+ },
+ {
+  "name": "STM32F4_CMSIS_DRIVER",
+  "path": "/packages/peripherals/hal-sdk/stm32/stm32f4_cmsis_driver",
+  "ver": "latest"
+ },
+ {
+  "name": "AT24CXX",
+  "path": "/packages/peripherals/at24cxx",
+  "ver": "latest"
+ }
+]
