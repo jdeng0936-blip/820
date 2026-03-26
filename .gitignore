@@ -16,7 +16,6 @@ bsp/*
 **/*.dep
 **/*.htm
 **/*.lnp
-**/*.sct
 **/*.uvguix.*
 **/JLinkLog.txt
 **/JLinkSettings.ini
