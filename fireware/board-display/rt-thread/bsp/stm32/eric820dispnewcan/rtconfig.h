@@ -449,6 +449,7 @@
 /* end of Micrium: Micrium software products porting for RT-Thread */
 #define PKG_USING_SFDB
 #define PKG_USING_SFDB_LATEST_VERSION
+#define SFDB_USING_EXAMPLE
 /* end of system packages */
 
 /* peripheral libraries and drivers */

@@ -13,7 +13,7 @@
 *.crf
 build
 Debug
-rtthread
+!rtthread
 settings
 documentation/html
 *~
