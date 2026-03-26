@@ -1,0 +1,72 @@
+[
+ {
+  "name": "WEBCLIENT",
+  "path": "/packages/iot/webclient",
+  "ver": "v2.2.0"
+ },
+ {
+  "name": "MYMQTT",
+  "path": "/packages/iot/mymqtt",
+  "ver": "latest"
+ },
+ {
+  "name": "FREEMODBUS",
+  "path": "/packages/iot/freemodbus",
+  "ver": "latest"
+ },
+ {
+  "name": "PPP_DEVICE",
+  "path": "/packages/iot/ppp_device",
+  "ver": "latest"
+ },
+ {
+  "name": "WIZNET",
+  "path": "/packages/iot/wiznet",
+  "ver": "latest"
+ },
+ {
+  "name": "MBEDTLS",
+  "path": "/packages/security/mbedtls",
+  "ver": "v2.28.1"
+ },
+ {
+  "name": "CJSON",
+  "path": "/packages/language/JSON/cJSON",
+  "ver": "v1.7.17"
+ },
+ {
+  "name": "LVGL",
+  "path": "/packages/multimedia/LVGL/LVGL",
+  "ver": "v8.3.11"
+ },
+ {
+  "name": "RT_KPRINTF_THREADSAFE",
+  "path": "/packages/system/enhanced-kservice/rt_kprintf_threadsafe",
+  "ver": "latest"
+ },
+ {
+  "name": "CMSIS_CORE",
+  "path": "/packages/system/CMSIS/CMSIS-Core",
+  "ver": "latest"
+ },
+ {
+  "name": "SFDB",
+  "path": "/packages/system/sfdb",
+  "ver": "latest"
+ },
+ {
+  "name": "STM32F4_HAL_DRIVER",
+  "path": "/packages/peripherals/hal-sdk/stm32/stm32f4_hal_driver",
+  "ver": "latest"
+ },
+ {
+  "name": "STM32F4_CMSIS_DRIVER",
+  "path": "/packages/peripherals/hal-sdk/stm32/stm32f4_cmsis_driver",
+  "ver": "latest"
+ },
+ {
+  "name": "AT24CXX",
+  "path": "/packages/peripherals/at24cxx",
+  "ver": "latest"
+ }
+]
