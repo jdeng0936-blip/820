@@ -3705,9 +3705,9 @@
       </Doc>
       <Doc>
         <Name>applications\main.c</Name>
-        <ColumnNumber>26</ColumnNumber>
+        <ColumnNumber>2</ColumnNumber>
         <TopLine>144</TopLine>
-        <CurrentLine>167</CurrentLine>
+        <CurrentLine>168</CurrentLine>
         <Folding>1</Folding>
         <ContractedFolders></ContractedFolders>
         <PaneID>0</PaneID>
