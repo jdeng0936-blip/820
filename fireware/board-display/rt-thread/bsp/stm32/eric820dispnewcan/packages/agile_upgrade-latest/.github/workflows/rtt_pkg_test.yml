@@ -1,0 +1,11 @@
+name: RT-Thread_Packages_Test
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  pkgs-test:
+    uses: RT-Thread/pkgs-test/.github/workflows/pkgs-action.yml@main
