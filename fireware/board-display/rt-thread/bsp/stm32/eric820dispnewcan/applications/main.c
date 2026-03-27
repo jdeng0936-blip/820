@@ -169,6 +169,7 @@ void make_login_packet(void)
 	memcpy(mqtt_send_buf, cjson_str, strlen(cjson_str));
 	mqtt_send_buf[strlen(cjson_str)] = 0;
 	cJSON_Delete(packet);
+	rt_memheap_free(cjson_str);
 }
 
 void make_settings_packet(void)
@@ -204,6 +205,7 @@ void make_settings_packet(void)
 	memcpy(mqtt_send_buf, cjson_str, strlen(cjson_str));
 	mqtt_send_buf[strlen(cjson_str)] = 0;
 	cJSON_Delete(packet);
+	rt_memheap_free(cjson_str);
 }
 
 void make_status_packet(void)
@@ -241,6 +243,7 @@ void make_status_packet(void)
 	memcpy(mqtt_send_buf, cjson_str, strlen(cjson_str));
 	mqtt_send_buf[strlen(cjson_str)] = 0;
 	cJSON_Delete(packet);
+	rt_memheap_free(cjson_str);
 }
 
 void make_voltage_packet(void)
@@ -339,6 +342,7 @@ void make_voltage_packet(void)
 	mqtt_send_buf[strlen(cjson_str)] = 0;
 	//mqtt_send_buf[512] = 0;
 	cJSON_Delete(packet);
+	rt_memheap_free(cjson_str);
 }
 
 void make_gnd_packet(void)
@@ -416,6 +420,7 @@ void make_gnd_packet(void)
 	memcpy(mqtt_send_buf, cjson_str, strlen(cjson_str));
 	mqtt_send_buf[strlen(cjson_str)] = 0;
 	cJSON_Delete(packet);
+	rt_memheap_free(cjson_str);
 }
 int result[4];
 void ipstr2num(char* str)
