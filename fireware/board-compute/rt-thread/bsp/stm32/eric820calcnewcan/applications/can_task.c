@@ -184,6 +184,7 @@ uint16_t can_online_client_cnt(void)
 		}
 	}
 	calc_status.clients_cnt = cnt;
+	rt_kprintf("online cnt %d\r\n", cnt);
 	return cnt;
 }
 
@@ -358,6 +359,8 @@ static void can_rx_thread(void * param)
 	char str[64];
 	RX_PACK rp;
 	uint16_t index = 0;
+	uint8_t founded = 0;
+	uint8_t duplicate = 0;
 	
 	
 	rt_list_init(&can_list);
@@ -394,10 +397,12 @@ static void can_rx_thread(void * param)
 	can_item_cnt = index;
 	print_tree(&can_list);
 	
-	bc_timer = rt_timer_create("bc_t", bc_timer_callback, RT_NULL, 4500, RT_TIMER_FLAG_PERIODIC | RT_TIMER_FLAG_SOFT_TIMER);
+	rt_kprintf("can item cnt %d\r\n", can_item_cnt);
+	
+	bc_timer = rt_timer_create("bc_t", bc_timer_callback, RT_NULL, 5000, RT_TIMER_FLAG_PERIODIC | RT_TIMER_FLAG_SOFT_TIMER);
 	rt_timer_start(bc_timer);
 	
-	pending_timer = rt_timer_create("pend_t", pending_timer_callback, RT_NULL, 2000, RT_TIMER_FLAG_ONE_SHOT | RT_TIMER_FLAG_SOFT_TIMER);
+	pending_timer = rt_timer_create("pend_t", pending_timer_callback, RT_NULL, 4000, RT_TIMER_FLAG_ONE_SHOT | RT_TIMER_FLAG_SOFT_TIMER);
 	bc_breath_req = 1;
 	while(1)
 	{
@@ -413,12 +418,22 @@ static void can_rx_thread(void * param)
 			}
 			else
 			{
+				founded = 0;
+				duplicate = 0;
 				for(int i=0;i<can_item_cnt;i++)
 				{
 					if(can_items[i]->id == rp.RxHeader.StdId - START_ID)
 					{
-						can_items[i]->online = 1;
-						can_items[i]->pending = 0;
+						if(can_items[i]->pending == 1)
+						{
+							can_items[i]->online = 1;
+							can_items[i]->pending = 0;
+							founded = 1;
+						}
+						else
+						{
+							duplicate = 1;
+						}
 						break;
 					}
 				}
@@ -427,6 +442,10 @@ static void can_rx_thread(void * param)
 					case CAN_CMD_BC:
 					{
 						rt_kprintf("bc replay from %d\r\n", rp.RxHeader.StdId - START_ID);
+						//if(founded == 0)
+						//	rt_kprintf("bc replay from %d\r\n", rp.RxHeader.StdId - START_ID);
+						//if(duplicate == 1)
+						//	rt_kprintf("duplicate bc replay from %d\r\n", rp.RxHeader.StdId - START_ID);
 					}
 					break;
 					case CAN_CMD_GET_VAL:
@@ -624,4 +643,17 @@ int can_comm_init(void)
 	return 0;
 }
 INIT_DEVICE_EXPORT(can_comm_init);
+
+static int get_online(int argc, char **argv)
+{
+	for(int i=0;i<32;i++)
+	{
+		rt_kprintf("0x%08x\r\n", calc_status.clients_mask[i]);
+	}
+	return RT_EOK;
+}
+
+/* 导出到 msh 命令列表中 */
+MSH_CMD_EXPORT(get_online, get online list );
+
 

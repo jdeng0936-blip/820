@@ -38,7 +38,7 @@ extern "C" {
 
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
-#define	CALC_VER	"V4.0.3BNC"
+#define	CALC_VER	"V4.0.5BNC"
 /* USER CODE END ET */
 
 /* Exported constants --------------------------------------------------------*/

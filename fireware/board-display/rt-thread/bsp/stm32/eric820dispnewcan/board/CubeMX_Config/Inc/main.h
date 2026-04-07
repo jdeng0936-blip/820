@@ -52,7 +52,7 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#define	DISP_VER	"V4.0.4BNC NO LOGO"
+#define	DISP_VER	"V4.0.5BNC NO LOGO"
 extern uint32_t udid[];
 extern volatile uint8_t i2c_check_ok;
 /* USER CODE END Includes */

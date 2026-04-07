@@ -1666,6 +1666,11 @@
           <GroupName>Drivers</GroupName>
           <Files>
             <File>
+              <FileName>drv_spi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>board\ports\drv_spi.c</FilePath>
+            </File>
+            <File>
               <FileName>stm32f4xx_hal_msp.c</FileName>
               <FileType>1</FileType>
               <FilePath>board\CubeMX_Config\Src\stm32f4xx_hal_msp.c</FilePath>
@@ -1704,11 +1709,6 @@
               <FileName>drv_common.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\libraries\HAL_Drivers\drv_common.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_spi.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>board\ports\drv_spi.c</FilePath>
             </File>
             <File>
               <FileName>spi_flash_init.c</FileName>

@@ -250,7 +250,7 @@ void client_nodes_read(void)
 	
 	tick_old = rt_tick_get();
 	if(client_nodes_cnt > 0)
-		sfdb_read(&sfdb, (uint8_t *)client_nodes, RECORD_LEN, 0, page_cnt, SFDB_READ_ASC);
+		sfdb_read(&sfdb, (uint8_t *)client_nodes, RECORD_LEN*page_cnt, 0, page_cnt, SFDB_READ_ASC);
 	duration = rt_tick_get() - tick_old;
 	rt_kprintf("read %d data cost %4d ms", page_cnt, duration);
 	sfdb_close(&sfdb);
