@@ -70,14 +70,20 @@ extern "C" {
         .u32SJW = 4                                         \
     }
 
+//#define CAN_BIT_TIME_CONFIG_200K_BAUD                       \
+//    {                                                       \
+//        .u32Prescaler = 7+1,                                  \
+//        .u32TimeSeg1 = 2+2,                                  \
+//        .u32TimeSeg2 = 0+1,                                   \
+//        .u32SJW = 0+1                                         \
+//    }
 #define CAN_BIT_TIME_CONFIG_200K_BAUD                       \
     {                                                       \
-        .u32Prescaler = 7+1,                                  \
-        .u32TimeSeg1 = 2+2,                                  \
-        .u32TimeSeg2 = 0+1,                                   \
-        .u32SJW = 0+1                                         \
+        .u32Prescaler = 4+1,                                  \
+        .u32TimeSeg1 = 3+2,                                  \
+        .u32TimeSeg2 = 2+1,                                   \
+        .u32SJW = 2+1                                         \
     }
-
 #define CAN_BIT_TIME_CONFIG_125K_BAUD                       \
     {                                                       \
         .u32Prescaler = 4,                                  \

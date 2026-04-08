@@ -166,7 +166,7 @@ rt_inline int _can_int_tx(struct rt_can_device *can, const struct rt_can_msg *da
         }
 
         can->status.sndchange = 1;
-        rt_completion_wait(&(tx_tosnd->completion), RT_WAITING_FOREVER);
+        rt_completion_wait(&(tx_tosnd->completion), 2000);
 
         level = rt_hw_interrupt_disable();
         result = tx_tosnd->result;

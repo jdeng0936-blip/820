@@ -75,7 +75,11 @@ rt_err_t can_rx_call(rt_device_t dev, rt_size_t size)
 	can_online = 1;
 	return RT_EOK;
 }
-
+//rt_err_t can_tx_comp(rt_device_t dev, void *buffer)
+//{
+//	rt_kprintf("msg send comp\r\n");
+//	return RT_EOK;
+//}
 void _set_default_filter(void)
 {
 #ifdef RT_CAN_USING_HDR
@@ -122,6 +126,7 @@ static void can_rx_thread(void * param)
         txmsg.rtr = RT_CAN_DTR;
         txmsg.len = 8;
 				rt_mq_send(tx_data_mq, &txmsg, sizeof(txmsg));
+				rt_kprintf("rx bc\r\n");
 			}
 			break;
 			case CAN_CMD_GET_VAL:
@@ -269,11 +274,14 @@ static void can_tx_thread(void * param)
 	{
 		rt_mq_recv(tx_data_mq, &txmsg, sizeof(txmsg), RT_WAITING_FOREVER);
 		size = rt_device_write(can_dev, 0, &txmsg, sizeof(txmsg));
-		if (size == 0)
+		if (size > 0)
 		{
-				rt_kprintf("can dev write data failed!\n");
+			rt_kprintf("send msg ok! \n");
 		}
-		rt_kprintf("send msg ok! \n");
+		else
+		{
+			rt_kprintf("can dev write data failed!\n");
+		}
 	}
 }
 int can_comm_init(void)
@@ -317,6 +325,7 @@ int can_comm_init(void)
 	rt_thread_startup(canrx_thread);
 	
 	rt_device_set_rx_indicate(can_dev, can_rx_call);
+	//rt_device_set_tx_complete(can_dev, can_tx_comp);
 	
 	return 0;
 }
@@ -340,7 +349,7 @@ static int set_id(int argc, char **argv)
 }
 
 /* 导出到 msh 命令列表中 */
-MSH_CMD_EXPORT(set_id, set can id sample: set_id 401 );
+MSH_CMD_EXPORT(set_id, set can id sample: set_id 1 );
 
 static int set_calc(int argc, char **argv)
 {
